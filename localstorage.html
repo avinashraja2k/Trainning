@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <form>
+        <label>Enter Key to Store</label>
+        <input type="text" id="key"><br>
+        <BR><label>Enter Value to Store</label>
+        <input type="text" id="val"><br>
+        <br><label>Enter Key to Search</label>
+        <input type="text" id="skey" ><br>
+        <!-- <br><label>Displayed Value</label>
+        <input type="text" id="sval" placeholder="sval" ><br> -->
+        <h1 id="sval"></h1>
+        <br>
+        <button onclick="storevals()">Store Key-Value Pair</button>
+        <button onclick="displayName()">Display Value</button>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni reiciendis totam officiis eaque voluptatibus, perferendis est laudantium modi, fugiat alias dolorem molestias voluptate adipisci recusandae et, consequuntur animi laboriosam provident?</p>
+    </form>
+    <script>
+        
+        function storevals(){
+            let key1=document.getElementById("key").value;
+        let val1=document.getElementById("val").value;
+            localStorage.setItem(key1,val1);
+        }
+
+        function displayName(){
+            let k=document.getElementById("skey").value;
+            console.log(localStorage.getItem(k));
+            document.getElementById("sval").innerHTML =k;
+        }
+    </script>
+</body>
+</html>

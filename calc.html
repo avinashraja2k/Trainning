@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #cont{
+  display: grid;
+  height:400px;
+  align-content: end;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  background-color:blue;
+  padding: 10px;
+}
+#output{
+    position: relative;
+    bottom:-20px;
+    text-align: center;
+    width: 50%;
+    left:320px;
+    background-color: greenyellow;
+}
+
+.item{
+  background-color:red;
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+    </style>
+</head>
+<body>
+    <div id="cont">
+        <div class="item" id="b1">1</div>
+        <div class="item" id="b2">2</div>
+        <div class="item" id="b3">3</div>
+        <div class="item" id="b4">4</div>
+        <div class="item" id="b5">5</div>
+        <div class="item" id="b6">6</div>
+        <div class="item" id="b7">7</div>
+        <div class="item" id="b8">8</div>
+        <div class="item" id="b9">9</div>
+        <div class="item" id="b0">0</div>
+        <div class="item" id="ba">+</div>
+        <div class="item" id="bs">-</div>
+        <div class="item" id="bm">*</div>
+        <div class="item" id="bd">/</div>
+        <div class="item" id="be">=</div>
+    </div>
+    <div id="output"></div>
+    <script>
+        var num=0,res=0,a=0,s=0,m=0,d=0;
+b1.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'1';
+  num=num*10+1;
+});
+b2.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'2';
+  num=num*10+2;
+});
+b3.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'3';
+  num=num*10+3;
+});
+b4.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'4';
+  num=num*10+4;
+});
+b5.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'5';
+  num=num*10+5;
+});
+b6.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'6';
+  num=num*10+6;
+});
+b7.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'7';
+  num=num*10+7;
+});
+b8.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'8';
+  num=num*10+8;
+});
+b9.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'9';
+  num=num*10+9;
+});
+b0.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'0';
+  num=num*10+0;
+});
+ba.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'+';
+  res=res+num;
+  num=0;
+  a=a+1;
+});
+bs.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'-';
+  res=res+num;
+  num=0;
+  s=s+1;
+});
+bm.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'*';
+  res=res+num;
+  num=0;
+  m=m+1;
+});
+bd.addEventListener('click', function handleClick() {
+  output.textContent = output.textContent+'/';
+  res=res+num;
+  num=0;
+  d=d+1;
+});
+
+
+be.addEventListener('click', function handleClick() {
+    if(a==1){
+        res=res+num;
+    }
+    if(s==1){
+        res=res-num;
+    }
+    if(m==1){
+        res=res*num;
+    }
+    if(d==1){
+        res=res/num;
+    }
+  output.textContent = " "+res;
+  res=0;
+  num=0;
+});
+
+    </script>
+</body>
+
+</html>

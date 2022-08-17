@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="key"  placeholder="key">
+    <input type="text" name="" id="value" placeholder="value" >
+    <button id="store" onclick="storevals()"> Store</button>
+    <br>
+    <br>
+    <input type="text" id="search1" placeholder="search"> 
+    <button id="Search" onclick="searchval()"> Search </button>
+
+    <br>
+    <h1 id="show"></h1>
+</body>
+<script>
+
+function storevals(){
+    var k,v;
+    k=document.getElementById("key").value;
+    v=document.getElementById("value").value;
+    
+    localStorage.setItem(k,v);
+    document.getElementById("key").value = "";
+    document.getElementById("value").value = "";
+   
+
+}
+function searchval(){
+    var skey=document.getElementById("search1").value;
+    console.log(skey);
+    var sval=localStorage.getItem(skey);
+    console.log(sval);
+    document.getElementById("show").innerHTML = sval;
+}
+console.log(localStorage)
+</script>
+</html>

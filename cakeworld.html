@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header{
+            background-color: rgb(67, 30, 4);
+            height: 120px;
+        }
+        #main{
+            background-color: blueviolet;
+            height: 600px;
+        }
+        #footer{
+            background-color: rgb(67, 30, 4);
+            height: 120px;
+        }
+        img{
+            border-radius: 1000px;
+        }
+        #imgdiv{
+            position: absolute;
+            top: 30px;
+            left:39%;
+            overflow: hidden;
+            border-radius: 1000px;
+        }
+        #prices{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            color: white;
+            top:240px;
+            left:100px;
+            padding: 10px;
+        }
+        #bill{
+            position: absolute;
+            width: 190px;
+            height: 200px;
+            background-color: blue;
+            top:368px;
+            right:100px;
+            color: white;
+            padding: 10px;
+            padding-left: 30px;
+        }
+        .headings{
+            text-align: center;
+        }
+        button{
+            background-color: blueviolet;
+            border-radius: 10px;
+            margin: 10px;
+            width: 100px;
+            height:40px;
+        }
+        #butdiv{
+            position:relative;
+            top:22px;
+            left: 250px;
+            padding: 10px;
+        }
+        #buy{
+            background-color: greenyellow;
+        }
+        #layer1{
+        width: 245px;
+        height: 30px;
+        }
+
+#layer2{    
+    width: 200px; 
+    height:30px ; 
+    left: 40px; 
+}   
+
+#layer3{    
+    width: 160px;   
+    left: 60px; 
+    height:30px ; 
+}   
+
+#layer4{    
+    width: 120px;   
+    left: 80px; 
+    height:30px ; 
+
+}   
+
+#layer5{    
+    width: 80px;    
+    left: 100px;    
+    height:30px ; 
+
+}   
+#layerdiv>center>div{  
+      border-radius: 10px;
+}   
+    #layerdiv{
+        position: absolute;
+        top: 425px;
+        left: 500px;
+        text-align: center;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+    </div>
+    <div id="imgdiv">
+    <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwjQFmNB8MCwaJhH4gbg1xHVE2P7wMkyaL6g&usqp=CAU"></center>
+    </div>
+    <div id="main">
+        <div id="prices">
+        <h3 class="headings">Prices</h3>
+            <ol>
+                <li>Chocolate------300</li>
+                <li>Strawberry-----100</li>
+                <li>Butterscotch---200</li>
+                <li>Vanilla--------250</li>
+                <li>Red Velvet-----350</li>
+            </ol>
+        </div>
+        <div id="layerdiv">
+        <center><div id="layer5"></div></center>
+        <center><div id="layer4"></div></center>
+        <center><div id="layer3"></div></center>
+        <center><div id="layer2"></div></center>
+        <center><div id="layer1"></div></center>
+        </div>
+        <div id="bill">
+            <h3 class="headings">Bill</h3>
+            <p id="billitems">
+            </p>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="butdiv">
+            <button id="Chocolate">Chocolate</button>
+            <button id="Strawberry">Strawberry</button>
+            <button id="Butterscotch">Butterscotch</button>
+            <button id="Vanilla">Vanilla</button>
+            <button id="RedVelvet">Red Velvet</button>
+            <button id="buy">Buy</button>
+        </div>
+    </div>
+    <script>
+        var count=0, tot=0;
+        document.getElementById("Chocolate").addEventListener("click", chocfunc);
+        function chocfunc() {
+                    count++;
+                    document.getElementById("layer"+count).style.backgroundColor="brown";
+                    document.getElementById("billitems").innerHTML += "<br>Chocolate------300";
+                    tot+=300;
+                    
+                }
+        
+        document.getElementById("Strawberry").addEventListener("click", strawfunc);
+        function strawfunc() {
+                    count++;
+                    document.getElementById("layer"+count).style.backgroundColor="blue";
+                    document.getElementById("billitems").innerHTML += "\nStrawberry-----100";
+                    tot+=100;
+        }
+                    
+        document.getElementById("Butterscotch").addEventListener("click", butfunc);
+        function butfunc() {
+            count++;
+                    document.getElementById("layer"+count).style.backgroundColor="yellow";
+                    document.getElementById("billitems").innerHTML += "\nButterscotch---200";
+                    tot+=200;
+                }
+        
+        document.getElementById("Vanilla").addEventListener("click", vanfunc);
+        function vanfunc() {
+            count++;
+                    document.getElementById("layer"+count).style.backgroundColor="white";
+                    document.getElementById("billitems").innerHTML += "<br> Vanilla--------250";
+                    tot+=250;
+        }
+                    
+        document.getElementById("RedVelvet").addEventListener("click", redfunc);
+        function redfunc() {
+            count++;
+                    document.getElementById("layer"+count).style.backgroundColor="red";
+                    document.getElementById("billitems").innerHTML += "<br> Red Velvet-----350";
+                    tot+=350;
+        }
+        document.getElementById("buy").addEventListener("click", billfunc);
+        function billfunc() {
+                    document.getElementById("billitems").innerHTML += "<center><b><br>Total="+tot+"</b></center>";
+        }
+    </script>
+</body>
+</html>
